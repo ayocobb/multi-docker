@@ -16,8 +16,8 @@ after_success:
   - docker build -t ayodocker/multi-server ./server
   - docker build -t ayodocker/multi-worker ./worker
   # Log in to the docker CLI
-  #- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker login --email=$DOCKER_HUB_EMAIL --username=$DOCKER_ID --password=$DOCKER_PASSWORD &
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  #- docker login --email=$DOCKER_HUB_EMAIL --username=$DOCKER_ID --password=$DOCKER_PASSWORD &
   # Take those images and push them to docker hub
   - docker push ayodocker/multi-client
   - docker push ayodocker/multi-nginx
